@@ -14,3 +14,15 @@ class Batalha:
                      [61,62,63,64,65,66,67,68,69,70],[71,72,73,74,75,76,77,78,79,80],
                      [81,82,83,84,85,89,90],[91,92,93,94,95,96,97,98,99,100]
          
+    def vez_jogador(self,linha,coluna):  
+        if len(self.jogadas) % 2 == 0:
+            self.matriz[linha][coluna]='jogador 1'
+            self.jogadas.append(1)  
+            self.proxima='jogador 2'
+            return 'jogador 1' 
+        else: 
+            self.matriz[linha][coluna]='jogador 1' 
+            self.jogadas.append(1)  
+            self.proxima='jogador 1'
+            return 'jogador 2' 
+        print(self.matriz) 
