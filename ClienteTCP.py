@@ -10,3 +10,4 @@ while True:
 	resposta = tcp.recv(1024)
 	resposta.decode('utf-8')
 	print(host, ':', resposta)
+tcp.close

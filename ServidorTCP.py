@@ -13,5 +13,4 @@ while True:
 	print(cliente, ':', msg)
 	resp = input('Resposta: ')
 	con.send(resp.encode('utf-8'))
-
-
+tcp.close
