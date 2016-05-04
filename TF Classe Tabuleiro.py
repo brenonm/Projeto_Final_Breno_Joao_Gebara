@@ -52,7 +52,66 @@ class Tabuleiro:
         espaco=tk.Label(self.window , text='                        ')
         espaco.grid(row=0, column=11)
 
+        A=tk.Label(self.window, text="A")
+        A.grid(row=0, column=13)
+
+        B=tk.Label(self.window, text="B")
+        B.grid(row=0, column=14)
+
+        C=tk.Label(self.window, text="C")
+        C.grid(row=0, column=15)
+
+        D=tk.Label(self.window, text="D")
+        D.grid(row=0, column=16)
+
+        E=tk.Label(self.window, text="E")
+        E.grid(row=0, column=17)
+
+        F=tk.Label(self.window, text="F")
+        F.grid(row=0, column=18)
+
+        G=tk.Label(self.window, text="G")
+        G.grid(row=0, column=19)
+
+        H=tk.Label(self.window, text="H")
+        H.grid(row=0, column=20)
+
+        I=tk.Label(self.window, text="I")
+        I.grid(row=0, column=21)
+
+        J=tk.Label(self.window, text="J")
+        J.grid(row=0, column=22)
         
+
+        numero1=tk.Label(self.window, text="1")
+        numero1.grid(row=1,column=23)
+
+        numero2=tk.Label(self.window, text="2")
+        numero2.grid(row=2,column=23)
+
+        numero3=tk.Label(self.window, text="3")
+        numero3.grid(row=3,column=23)
+
+        numero4=tk.Label(self.window, text="4")
+        numero4.grid(row=4,column=23)
+
+        numero5=tk.Label(self.window, text="5")
+        numero5.grid(row=5,column=23)
+
+        numero6=tk.Label(self.window, text="6")
+        numero6.grid(row=6,column=23)
+
+        numero7=tk.Label(self.window, text="7")
+        numero7.grid(row=7,column=23)
+
+        numero8=tk.Label(self.window, text="8")
+        numero8.grid(row=8,column=23)
+
+        numero9=tk.Label(self.window, text="9")
+        numero9.grid(row=9,column=23)
+
+        numero10=tk.Label(self.window, text="10")
+        numero10.grid(row=10,column=23)
 
         numero1=tk.Label(self.window, text="1")
         numero1.grid(row=1,column=0)
