@@ -5,8 +5,8 @@ tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP 
 orig=(host,porta)
 tcp.bind(orig)
 tcp.listen(1)
+con, cliente = tcp.accept()
 while True:
-	con, cliente = tcp.accept()
 	msg=con.recv(1024)  #Estabelece mensagem recebida em 1024 bytes
 	msg.decode('utf-8')
 	if not msg: break
