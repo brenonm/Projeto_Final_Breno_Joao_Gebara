@@ -11,7 +11,7 @@ class Pagina_Inicial:
 		self.window.configure(width=600, height=500)
 
 
-		titulo=tk.Label(self.window, text="B4T4Lh4 N4V4L")
+		titulo=tk.Label(self.window, text="B4T4LH4 N4V4L")
 		titulo.grid()
 		entrada_ip=tk.Entry(self.window)
 		entrada_ip.grid()
