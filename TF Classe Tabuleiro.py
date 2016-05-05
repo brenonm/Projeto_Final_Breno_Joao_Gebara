@@ -5,6 +5,9 @@ Created on Wed Apr 27 17:09:54 2016
 @author: Breno
 """
 
+
+# http://stackoverflow.com/questions/20717203/python-tkinter-setting-up-button-callback-functions-with-a-loop LAMBDA
+
 import tkinter as tk
 
 class Tabuleiro:
@@ -153,7 +156,8 @@ class Tabuleiro:
         for i in range(1,11):
             for j in range(1,11):
                 self.button=tk.Button(self.window)
-                self.button.configure(width=6, height=3)
+                cmd = lambda i=i, j=j: self.button_callback(i,j)
+                self.button.configure(width=6, height=3, fg='yellow', command=cmd)
                 self.button.grid(row=i, column=j)
 
         n=0
@@ -162,8 +166,13 @@ class Tabuleiro:
         for n in range(1,11):
             for m in range(13,23):
                 self.botao=tk.Button(self.window)
-                self.botao.configure(width=6, height=3)
+                cmd=lambda n=n, m=m: self.button_callback(n,m)
+                self.botao.configure(width=6, height=3, command=cmd)
                 self.botao.grid(row=n, column=m)
+
+    def button_callback (self, row, column):
+    	print(str(row) + " " + str(column))
+
 
 
 
