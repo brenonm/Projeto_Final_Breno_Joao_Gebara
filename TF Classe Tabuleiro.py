@@ -14,6 +14,9 @@ class Tabuleiro:
     
 
     def __init__(self):
+
+
+
         
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
@@ -171,8 +174,11 @@ class Tabuleiro:
                 self.botao.grid(row=n, column=m)
 
     def button_callback (self, row, column):
-    	print(str(row) + " " + str(column))
+    	msg=(str(row) + " " + str(column))
+    	return msg
 
+    def callback_tcp(self,msg):
+    	msg_tcp=button_callback
 
 
 
