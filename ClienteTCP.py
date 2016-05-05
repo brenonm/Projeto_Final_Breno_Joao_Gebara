@@ -7,7 +7,7 @@ tcp.connect(dest)
 while True:
 	msg= input('Mensagem: ')
 	tcp.send(msg.encode('utf-8'))
-	resposta = tcp.recv(1024)
-	resposta.decode('utf-8')
-	print(host, ':', resposta)
+	msg = tcp.recv(1024)
+	msg.decode('utf-8')
+	print(host, ':', msg)
 

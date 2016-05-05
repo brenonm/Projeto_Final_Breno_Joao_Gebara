@@ -11,6 +11,6 @@ while True:
 	msg.decode('utf-8')
 	if not msg: break
 	print(cliente, ':', msg)
-	resp = input('Resposta: ')
-	con.send(resp.encode('utf-8'))
+	msg = input('Resposta: ')
+	con.send(msg.encode('utf-8'))
 
