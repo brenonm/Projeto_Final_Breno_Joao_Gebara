@@ -31,4 +31,12 @@ class Batalha:
             self.jogadas.append(1)  
             self.proxima='jogador 1'
             return 'jogador 2' 
-        print(self.matriz_1) 
+        print(self.matriz_1)
+
+class Barcos:
+    def __init__(self):
+        self.barcos = {"porta-aviões":5
+                    "cruzador":4
+                    "navio":3
+                    "patrulheiro":2
+                                }
