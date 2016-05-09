@@ -22,7 +22,7 @@ class Pagina_Inicial:
 		entrada_ip=tk.Entry(self.window)
 		entrada_ip.pack()
 		conectar=tk.Button(self.window, text="Conectar")
-		conectar.pack(#command=conectar com o servidor tcp)
+		conectar.pack()#(command=conectar com o servidor tcp)
 
 	def iniciar(self):
 		self.window.mainloop()		
