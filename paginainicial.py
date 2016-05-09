@@ -1,4 +1,5 @@
 import tkinter as tk
+ 
 
 
 
@@ -6,25 +7,27 @@ class Pagina_Inicial:
 
 	def __init__(self):
 
+
 		self.window=tk.Tk()
 		self.window.title("Batalha Naval")
-		self.window.configure(width=600, height=500)
+		self.window.configure(bg="titulo.gif")
+		self.window.geometry("200x200")
+
+		foto = tk.PhotoImage(file="titulo.gif")
+		x = tk.Label(self.window, image=foto)
+		x.pack()
 
 
-		titulo=tk.Label(self.window, text="B4T4LH4 N4V4L")
-		titulo.grid()
+		titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 16))
+		titulo.pack()
 		entrada_ip=tk.Entry(self.window)
-		entrada_ip.grid()
+		entrada_ip.pack()
 		conectar=tk.Button(self.window, text="Conectar")
-		conectar.grid()
+		conectar.pack(#command=conectar com o servidor tcp)
 
+	
+pagina=Pagina_Inicial()
+pagina.self.window.mainloop()	
 
-
-
-	def iniciar(self):
-		self.window.mainloop()
-
-Pagina=Pagina_Inicial()
-Pagina.iniciar()
 
 
