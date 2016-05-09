@@ -9,21 +9,19 @@ Created on Wed Apr 27 17:09:54 2016
 # http://stackoverflow.com/questions/20717203/python-tkinter-setting-up-button-callback-functions-with-a-loop LAMBDA
 
 import tkinter as tk
+import socket
 
 class Tabuleiro:
     
 
     def __init__(self):
 
-
-
-        
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
-        
 
-        
+
+            
 
         A=tk.Label(self.window, text="A")
         A.grid(row=0, column=1)
@@ -172,17 +170,23 @@ class Tabuleiro:
                 cmd=lambda n=n, m=m: self.button_callback(n,m)
                 self.botao.configure(width=6, height=3, command=cmd)
                 self.botao.grid(row=n, column=m)
+    
 
-    def button_callback (self, row, column):
-    	msg=(str(row) + " " + str(column))
-    	return msg
-
-    #def callback_tcp(self,msg):
-    #	msg_tcp=button_callback
+    def button_callback(self, row, column):
+        msg=(str(row) + " , " + str(column))
+        con.send(msg.encode('utf-8'))
 
 
 
-          
+host= '0.0.0.0' #Servidor interno
+porta= 5000 #Porta de comunicação
+tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
+orig=(host,porta)
+tcp.bind(orig)
+tcp.listen(1)
+con, cliente = tcp.accept()
+
+
 Tabuleiro=Tabuleiro()
 Tabuleiro.window.mainloop()
 
