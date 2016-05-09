@@ -10,7 +10,6 @@ class Pagina_Inicial:
 
 		self.window=tk.Tk()
 		self.window.title("Batalha Naval")
-		self.window.configure(bg="titulo.gif")
 		self.window.geometry("200x200")
 
 		foto = tk.PhotoImage(file="titulo.gif")
@@ -25,9 +24,13 @@ class Pagina_Inicial:
 		conectar=tk.Button(self.window, text="Conectar")
 		conectar.pack(#command=conectar com o servidor tcp)
 
+	def iniciar(self):
+		self.window.mainloop()		
+
 	
 pagina=Pagina_Inicial()
-pagina.self.window.mainloop()	
+pagina.iniciar()	
+
 
 
 
