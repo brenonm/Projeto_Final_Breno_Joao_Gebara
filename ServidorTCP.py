@@ -1,5 +1,9 @@
 import socket
+<<<<<<< HEAD
 host= '0.0.0.0' #Servidor interno
+=======
+host= 'localhost' #Servidor interno
+>>>>>>> origin/master
 porta= 5000 #Porta de comunicação
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
 orig=(host,porta)
