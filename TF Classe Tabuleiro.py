@@ -177,8 +177,8 @@ class Tabuleiro:
     	msg=(str(row) + " " + str(column))
     	return msg
 
-    def callback_tcp(self,msg):
-    	msg_tcp=button_callback
+    #def callback_tcp(self,msg):
+    #	msg_tcp=button_callback
 
 
 
