@@ -11,14 +11,14 @@ class Pagina_Inicial:
 
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
-        self.window.geometry("200x200")
+        self.window.geometry("400x400")
 
 
 		#foto = ImageTk.PhotoImage(Image.open("titulo.gif"))
 		#panel = Label(root, image = foto)
 		#panel.pack(side = "bottom", fill = "both", expand = "yes")
 
-        titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 16))
+        titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 26))
         titulo.pack()
 
         self.check=tk.Button(self.window, text="servidor")
