@@ -38,6 +38,7 @@ class Pagina_Inicial:
         entrada_ip=tk.Entry(self.window)
         entrada_ip.pack(side = "top", expand = "yes")
         conectar=tk.Button(self.window, text="Conectar", font=("Helvetica", 26))
+        conectar.configure(command=pegar_ip())
         conectar.pack(side = "top", expand = "yes")
         self.check.pack_forget()
         self.check2.pack_forget()
@@ -48,6 +49,9 @@ class Pagina_Inicial:
         aguardando.pack(side = "top", fill = "both", expand = "yes")   
         self.check.pack_forget()
         self.check2.pack_forget()
+    
+    def pegar_ip(self):
+    	self.entrada_ip.get()    
 			
 				
 
