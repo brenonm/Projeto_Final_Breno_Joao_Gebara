@@ -11,6 +11,71 @@ Created on Wed Apr 27 17:09:54 2016
 import tkinter as tk
 import socket
 
+
+class Pagina_Inicial:
+
+    def __init__(self):
+
+
+        self.window=tk.Tk()
+        self.window.title("Batalha Naval")
+        self.window.geometry("200x200")
+
+
+        #foto = ImageTk.PhotoImage(Image.open("titulo.gif"))
+        #panel = Label(root, image = foto)
+        #panel.pack(side = "bottom", fill = "both", expand = "yes")
+
+        titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 16))
+        titulo.pack()
+
+        self.check=tk.Button(self.window, text="servidor")
+        self.check2=tk.Button(self.window, text="cliente")
+        cmd=lambda: self.callback2()
+        self.check.configure(command=cmd)
+        cmd2=lambda: self.callback()
+        self.check2.configure(command=cmd2)
+        self.check.pack()
+        self.check2.pack()
+        
+        
+    def iniciar(self):
+        
+        self.window.mainloop()
+    
+    def callback(self):
+        entrada_ip=tk.Entry(self.window)
+        entrada_ip.pack()
+        conectar=tk.Button(self.window, text="Conectar")
+        conectar.pack()
+        self.check.pack_forget()
+        self.check2.pack_forget()
+        host = entrada_ip     # Endereco IP do Servidor
+        porta = 5000            # Porta que o Servidor esta
+        tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        dest = (host, porta)
+        tcp.connect(dest)
+        
+
+    def callback2(self):
+        aguardando=tk.Label(self.window, text="Aguardando...")
+        aguardando.pack()   
+        self.check.pack_forget()
+        self.check2.pack_forget()
+        host= '127.0.0.1' #Servidor interno
+        porta= 5000 #Porta de comunicação
+        tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
+        orig=(host,porta)
+        tcp.bind(orig)
+        tcp.listen(1)
+        self.con, cliente = tcp.accept()
+        Tabuleiro().window.mainloop()
+
+            
+                
+
+    
+
 class Tabuleiro:
     
 
@@ -174,20 +239,12 @@ class Tabuleiro:
 
     def button_callback(self, row, column):
         msg=(str(row) + " , " + str(column))
-        con.send(msg.encode('utf-8'))
+        self.con.send(msg.encode('utf-8'))
 
 
 
-host= '0.0.0.0' #Servidor interno
-porta= 5000 #Porta de comunicação
-tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
-orig=(host,porta)
-tcp.bind(orig)
-tcp.listen(1)
-con, cliente = tcp.accept()
 
-
-Tabuleiro=Tabuleiro()
-Tabuleiro.window.mainloop()
+PaginaInicial=Pagina_Inicial()
+PaginaInicial.window.mainloop()
 
 
