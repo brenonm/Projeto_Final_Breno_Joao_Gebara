@@ -91,7 +91,7 @@ class Pagina_Inicial:
     
 
 class Tabuleiro:
-    
+     inicio=Pagina_Inicial()
 
     def __init__(self):
 
@@ -99,7 +99,7 @@ class Tabuleiro:
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
 
-        self.inicio=Pagina_Inicial()
+       
     
 
         A=tk.Label(self.window, text="A")
@@ -253,7 +253,7 @@ class Tabuleiro:
 
     def button_callback(self, row, column):
         msg=(str(row) + " , " + str(column))
-        inicio.self.con.send(msg.encode('utf-8'))
+        inicio.con.send(msg.encode('utf-8'))
 
 
 
