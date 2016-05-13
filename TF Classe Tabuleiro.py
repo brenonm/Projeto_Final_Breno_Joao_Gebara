@@ -91,7 +91,8 @@ class Pagina_Inicial:
     
 
 class Tabuleiro:
-     inicio=Pagina_Inicial()
+    
+    inicio=Pagina_Inicial()
 
     def __init__(self):
 
@@ -253,7 +254,7 @@ class Tabuleiro:
 
     def button_callback(self, row, column):
         msg=(str(row) + " , " + str(column))
-        inicio.con.send(msg.encode('utf-8'))
+        self.inicio.con.send(msg.encode('utf-8'))
 
 
 
