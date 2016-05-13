@@ -76,7 +76,7 @@ class Pagina_Inicial:
         self.aguardando.pack(side = "top", fill = "both", expand = "yes")   
         self.check.pack_forget()
         self.check2.pack_forget()
-        host= '127.0.0.1' #Servidor interno
+        host= '0.0.0.0' #Servidor interno
         porta= 5000 #Porta de comunicação
         tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
         orig=(host,porta)
