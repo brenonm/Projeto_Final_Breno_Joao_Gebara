@@ -99,8 +99,8 @@ class Tabuleiro:
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
 
-
-            
+        self.inicio=Pagina_Inicial()
+    
 
         A=tk.Label(self.window, text="A")
         A.grid(row=0, column=1)
@@ -253,7 +253,7 @@ class Tabuleiro:
 
     def button_callback(self, row, column):
         msg=(str(row) + " , " + str(column))
-        self.con.send(msg.encode('utf-8'))
+        inicio.self.con.send(msg.encode('utf-8'))
 
 
 
