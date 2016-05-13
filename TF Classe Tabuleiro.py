@@ -26,6 +26,10 @@ class Pagina_Inicial:
         #panel = Label(root, image = foto)
         #panel.pack(side = "bottom", fill = "both", expand = "yes")
 
+        #photo = tk.PhotoImage(file="titulo.gif")
+        #w = tk.Label(window, image=photo)
+        #w.pack()
+
         titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 26))
         titulo.pack(side = "top",fill="both", expand="yes")
 
