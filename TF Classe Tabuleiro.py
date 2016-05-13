@@ -11,7 +11,6 @@ Created on Wed Apr 27 17:09:54 2016
 import tkinter as tk
 import socket
 
-
 class Pagina_Inicial:
 
     def __init__(self):
@@ -20,6 +19,7 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
+     
 
 
         #foto = ImageTk.PhotoImage(Image.open("titulo.gif"))
@@ -56,18 +56,19 @@ class Pagina_Inicial:
         self.check2.pack_forget()
         self.server = 0     # Endereco IP do Servidor
         porta = 5000            # Porta que o Servidor esta
-        tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        dest = (self.server, porta)
-                
+        self.tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.dest = (self.server, porta)
+        
     def pegarip(self):
-        #self.entrada_ip.get()
-        self.server=self.entrada_ip  
-        return self.server
+    
+        self.server=self.entrada_ip.get()
+        self.tcp.connect(self.dest) 
+        Tabuleiro().window.mainloop()
 
 
 
     def callback2(self):
-        self.aguardando=tk.Label(self.window, text="Aguardando...", font=("Helvetica", 26))
+        self.aguardando=tk.Label(self.window, text="Erro na Conexão", font=("Helvetica", 26))
         self.aguardando.pack(side = "top", fill = "both", expand = "yes")   
         self.check.pack_forget()
         self.check2.pack_forget()

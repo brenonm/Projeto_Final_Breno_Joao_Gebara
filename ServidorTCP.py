@@ -1,6 +1,5 @@
 
-host= 'localhost' #Servidor interno
-origin/master
+host= '127.0.0.1' #Servidor interno
 porta= 5000 #Porta de comunicação
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
 orig=(host,porta)
