@@ -4,6 +4,7 @@ Created on Sun May  1 20:21:42 2016
 
 @author: Breno
 """
+import random
 
 class Batalha:
     def __init__(self):
@@ -33,10 +34,63 @@ class Batalha:
             return 'jogador 2' 
         print(self.matriz_1)
 
-class Barcos:
-    def __init__(self):
-        self.barcos = {"porta-aviões":5
-                    "cruzador":4
-                    "navio":3
-                    "patrulheiro":2
-                                }
+
+
+
+class Barco:
+    nada = 0
+    água = 1
+    acerto = 2
+    afundou = 3
+    outro = -1
+    
+    tamahos = {
+        "a" : 5,
+        "b" : 4,
+        "d" : 3,
+        "s" : 3,
+        "m" : 2
+    }
+    
+    abreviações = [
+        "a",
+        "b",
+        "d",
+        "s",
+        "m"
+    ]
+    
+    nomes = {
+        "a" : "porta-aviões",
+        "b" : "cruzador",
+        "d" : "navio",
+        "s" : "patrulheiro",
+        "m" : "bote"
+    }
+    
+    confirmações = {
+        nada : "nada",
+        água : "água",
+        acerto : "acerto",
+        afundou : "afundou"
+    }
+    
+    embarcações = [
+       
+        "porta-aviões",
+        "cruzador",
+        "navio",
+        "patrulheiro",
+        "bote"
+
+    ]
+
+class colocar_barcos:
+     """docstring for colocar_barcos"""
+
+
+    tamanho_barco = 20
+    cor_barco = "blue"
+    tag = "area_barco"
+    tamanho = 150
+
