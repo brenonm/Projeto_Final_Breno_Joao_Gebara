@@ -154,6 +154,37 @@ class Barco:
         
         self._vertical = not self._vertical
 
+    def conflito_posição_barcos(self, other):
+        
+        s1 = self.get_covering_set()
+        s2 = other.get_covering_set()
+        return len(s1.intersection(s2)) > 0
+        
+    def get_nome(self):
+    
+        return self._type
+        
+    def get_abreviação(self):
+        
+        return self._type
+        
+    def get_nome_completo(self):
+        
+        return self._full_name
+        
+    def teste_afundou(self):
+    
+        return len(self._acerto) == self._tamanhos
+        
+    def _get_str_v(self):
+        if self._vertical:
+            return "vertical"
+        else:
+            return "horizontal"
+        
+    def __str__(self):
+        return "Barco %s @ %s orientado %sly" % (self._type, str((self._x, self._y)), self._get_str_v())
+
 class colocar_barcos:
      """docstring for colocar_barcos"""
 
