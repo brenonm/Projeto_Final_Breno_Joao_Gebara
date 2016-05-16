@@ -19,7 +19,7 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
-        self.window.wm_iconbitmap('24635-200.ico')
+        self.window.wm_iconbitmap("icone.ico")
      
 
 
@@ -31,7 +31,7 @@ class Pagina_Inicial:
         #w = tk.Label(window, image=photo)
        	#w.pack()
 
-        titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 26))
+        titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 28))
         titulo.pack(side = "top",fill="both", expand="yes")
 
         self.check=tk.Button(self.window, text="servidor", font=("Helvetica", 26))
@@ -96,7 +96,7 @@ class Tabuleiro:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
-        self.window.wm_iconbitmap('24635-200.ico')
+        self.window.wm_iconbitmap('icone.ico')
 
        
     
@@ -236,7 +236,7 @@ class Tabuleiro:
             for j in range(1,11):
                 self.button=tk.Button(self.window)
                 cmd = lambda i=i, j=j: self.button_callback(i,j)
-                self.button.configure(width=6, height=3, fg='yellow', command=cmd)
+                self.button.configure(width=6, height=3, command=cmd)
                 self.button.grid(row=i, column=j)
 
         n=0
