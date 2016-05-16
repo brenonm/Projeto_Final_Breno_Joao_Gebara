@@ -85,6 +85,36 @@ class Barco:
 
     ]
 
+
+
+    @staticmethod
+    def adquirir_nome_estado(state):
+        
+        return {Barco.nada : "nada",
+                Barco.acerto : "acerto",
+                Barco.afundou : "afundou"} [state]
+
+    def __init__(self, x=None, y=None, type=None, vertical=None):
+        
+        self._x = x
+        self._y = y
+        self._type = type
+        self._vertical = vertical
+        self._nome_completo = None
+        
+        if self._type is not None:
+            assert self._type in self.tamanhos.keys()
+            self._tamanhos = Barco.tamanhos[self._type]
+            
+            for nomes in self.Barco:
+                if nomes.lower()[0] == self._type:
+                    self._nome_completo = nomes
+                    break
+        
+        self._acerto = set([])
+        
+   
+
 class colocar_barcos:
      """docstring for colocar_barcos"""
 
