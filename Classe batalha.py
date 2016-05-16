@@ -112,8 +112,47 @@ class Barco:
                     break
         
         self._acerto = set([])
+
+
+    def teste_vertical(self):
         
-   
+        return self._vertical
+        
+    def coordenadas(self):
+
+        return (self._x, self._y)
+        
+    def origem(self):
+        
+        return self.coords()
+        
+    def get_size(self):
+    
+        return self._size
+        
+    def quadrados_ocupados(self):
+        
+        if self._vertical:
+            return [(self._x, self._y + i) for i in range(self._size)]
+        else:
+            return [(self._x + i, self._y) for i in range(self._size)]
+            
+    def get_covering_set(self):
+        '''Return the *set* of covering squares.'''
+        
+        return set(self.get_covering_squares())
+        
+    def lista_acertos(self):
+        
+        return [coord in self._hit for coord in self.get_covering_squares()]
+        
+    def marcador(self, x, y):
+    
+        self._hit.add((x, y))
+        
+    def rotate(self):
+        
+        self._vertical = not self._vertical
 
 class colocar_barcos:
      """docstring for colocar_barcos"""
