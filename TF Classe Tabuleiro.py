@@ -19,6 +19,7 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
+        self.window.wm_iconbitmap('24635-200.ico')
      
 
 
@@ -28,7 +29,7 @@ class Pagina_Inicial:
 
         #photo = tk.PhotoImage(file="titulo.gif")
         #w = tk.Label(window, image=photo)
-        #w.pack()
+       	#w.pack()
 
         titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 26))
         titulo.pack(side = "top",fill="both", expand="yes")
@@ -36,23 +37,19 @@ class Pagina_Inicial:
         self.check=tk.Button(self.window, text="servidor", font=("Helvetica", 26))
         self.check2=tk.Button(self.window, text="cliente", font=("Helvetica", 26))
         cmd=lambda: self.callback2()
-        self.check.configure(command=cmd)
+        self.check.configure(command=cmd, fg="blue")
         cmd2=lambda: self.callback()
-        self.check2.configure(command=cmd2)
+        self.check2.configure(command=cmd2, fg="blue")
         self.check.pack(side = "top", fill = "both", expand = "yes")
         self.check2.pack(side = "top", fill = "both", expand = "yes")
         
-        
-    def iniciar(self):
-        
-        self.window.mainloop()
-
+      
       
     
     def callback(self):
         self.entrada_ip=tk.Entry(self.window)
         self.entrada_ip.pack(side = "top", expand = "yes")
-        self.conectar=tk.Button(self.window, text="Conectar", font=("Helvetica", 26))
+        self.conectar=tk.Button(self.window, text="Conectar", font=("Helvetica", 26), fg="blue")
         cmd3=lambda: self.pegarip()
         self.conectar.configure(command=cmd3)
         self.conectar.pack(side = "top", expand = "yes")
@@ -99,6 +96,7 @@ class Tabuleiro:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
+        self.window.wm_iconbitmap('24635-200.ico')
 
        
     
