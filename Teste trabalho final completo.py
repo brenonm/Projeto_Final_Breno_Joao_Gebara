@@ -212,7 +212,7 @@ class Carrega_Barco(object):
                 
         return embarcações
 
-class ShipPlacementPanel(frame):
+class ShipPlacementPanel:
     '''A frame which contains visualizations for placing ships.'''
     
     # the size of a single tile
@@ -221,10 +221,8 @@ class ShipPlacementPanel(frame):
     TAG = "staging_ship"
     CANVAS_WIDTH = 150
 
-    def __init__(self, master):
+    def __init__(self):
         '''Create a new panel with the given parent.'''
-    
-        frame.__init__(self, master)
         self._ship_name = StringVar()
         
         
@@ -504,6 +502,7 @@ class Tabuleiro:
 PaginaInicial=Pagina_Inicial()
 PaginaInicial.window.mainloop()
 Tabuleiro=Tabuleiro()
+Tabuleiro.window.mainloop()
 ShipPlacementPanel=ShipPlacementPanel()
 Carrega_Barco=Carrega_Barco()
 Batalha=Batalha()
