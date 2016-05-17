@@ -185,6 +185,28 @@ class Barco:
     def __str__(self):
         return "Barco %s @ %s orientado %sly" % (self._type, str((self._x, self._y)), self._get_str_v())
 
+class Carrega_Barco(object):
+    '''Load ship object from a file.'''
+    
+    @staticmethod
+    def read(fname):
+        f = open(fname)
+        barcos = []
+        
+        for line in f:
+            if len(line.strip()) == 0 or line.strip().count(" ") != 3:
+                continue
+                
+            barco_type, x, y, v = l = line.strip().split()
+            
+            if barco_type in Barco.tamanhos:
+                barcos = Barco(x=int(x), y=int(y), type=barco_type, vertical=v)
+                embarcações.append(barcos)
+                
+        f.close()
+                
+        return embarcações
+
 class colocar_barcos:
      """docstring for colocar_barcos"""
 
