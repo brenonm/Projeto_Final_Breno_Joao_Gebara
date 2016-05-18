@@ -95,7 +95,7 @@ class Tabuleiro:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
-        self.window.wm_iconbitmap('24635-200.ico')
+       # self.window.wm_iconbitmap('24635-200.ico')
         self.inicio=Pagina_Inicial()
 
     
