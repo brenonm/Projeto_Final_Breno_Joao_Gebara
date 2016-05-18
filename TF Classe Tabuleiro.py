@@ -85,11 +85,9 @@ class Pagina_Inicial:
             
                 
 
-    
 
 class Tabuleiro:
     
-    inicio=Pagina_Inicial()
 
     def __init__(self):
 
@@ -97,7 +95,7 @@ class Tabuleiro:
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
         self.window.wm_iconbitmap('24635-200.ico')
-
+        self.inicio=Pagina_Inicial()
        
     
 
