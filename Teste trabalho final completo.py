@@ -261,7 +261,7 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
-        #self.window.wm_iconbitmap("icone.ico")
+        self.window.wm_iconbitmap("icone.ico")
      
 
 
@@ -338,7 +338,7 @@ class Tabuleiro:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
-        #self.window.wm_iconbitmap('icone.ico')
+        self.window.wm_iconbitmap('icone.ico')
 
        
     

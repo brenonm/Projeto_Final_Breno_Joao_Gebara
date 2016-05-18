@@ -10,6 +10,7 @@ Created on Wed Apr 27 17:09:54 2016
 
 import tkinter as tk
 import socket
+from tkinter import ttk
 
 class Pagina_Inicial:
 
@@ -232,9 +233,11 @@ class Tabuleiro:
 
         for i in range(1,11):
             for j in range(1,11):
+             
                 self.button=tk.Button(self.window)
-                cmd = lambda i=i, j=j: self.button_callback(i,j)
-                self.button.configure(width=6, height=3, command=cmd)
+                cmd1 = lambda i=i, j=j: self.button_callback(i,j)
+                self.button.configure(command=cmd1,width=6, height=3)
+
                 self.button.grid(row=i, column=j)
 
         n=0
@@ -242,10 +245,11 @@ class Tabuleiro:
 
         for n in range(1,11):
             for m in range(13,23):
-                self.botao=tk.Button(self.window)
-                cmd=lambda n=n, m=m: self.button_callback(n,m)
-                self.botao.configure(width=6, height=3, command=cmd)
-                self.botao.grid(row=n, column=m)
+                botao=tk.Button(self.window)
+                cmd2=lambda n=n, m=m: self.button_callback(n,m)
+                botao.configure(width=6, height=3, command=cmd2)
+                botao.config(bg='red')
+                botao.grid(row=n, column=m)
     
 
     def button_callback(self, row, column):
@@ -253,9 +257,20 @@ class Tabuleiro:
         self.inicio.con.send(msg.encode('utf-8'))
 
 
+    #def pressiona_button(self):
+     #   self.button.configure(bg="red")    
+      #  return self.cmd1
+   
+
+    #def pressiona_botao(self):
+     #   self.button.configure(bg="red")    
+      #  return self.cmd2
 
 
-PaginaInicial=Pagina_Inicial()
-PaginaInicial.window.mainloop()
+
+#PaginaInicial=Pagina_Inicial()
+#PaginaInicial.window.mainloop()
+Tabuleiro=Tabuleiro()
+Tabuleiro.window.mainloop()
 
 
