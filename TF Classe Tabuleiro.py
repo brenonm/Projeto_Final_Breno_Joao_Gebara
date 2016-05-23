@@ -81,7 +81,7 @@ class Pagina_Inicial:
         tcp.bind(orig)
         tcp.listen(1)
         self.con, cliente = tcp.accept()
-        Tabuleiro().window.mainloop()
+        Tabuleiro(self).window.mainloop()
 
             
                 
@@ -90,13 +90,13 @@ class Pagina_Inicial:
 class Tabuleiro:
     
 
-    def __init__(self):
+    def __init__(self, pginicial):
 
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
        # self.window.wm_iconbitmap('24635-200.ico')
-        self.inicio=Pagina_Inicial()
+        self.inicio=pginicial
 
     
 
@@ -268,9 +268,9 @@ class Tabuleiro:
 
 
 
-#PaginaInicial=Pagina_Inicial()
-#PaginaInicial.window.mainloop()
-Tabuleiro=Tabuleiro()
-Tabuleiro.window.mainloop()
+PaginaInicial=Pagina_Inicial()
+PaginaInicial.window.mainloop()
+#Tabuleiro=Tabuleiro()
+#Tabuleiro.window.mainloop()
 
 
