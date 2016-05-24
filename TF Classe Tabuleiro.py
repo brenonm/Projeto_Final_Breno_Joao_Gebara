@@ -20,7 +20,7 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
-        self.window.wm_iconbitmap("icone.ico")
+        #self.window.wm_iconbitmap("icone.ico")
      
 
 
