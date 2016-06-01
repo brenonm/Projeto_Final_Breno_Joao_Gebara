@@ -20,17 +20,17 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
-        #self.window.wm_iconbitmap("icone.ico")
+       # self.window.wm_iconbitmap("icone.ico")
      
 
 
-        #foto = ImageTk.PhotoImage(Image.open("titulo.gif"))
+        #foto = imageTk.PhotoImage(Image.open("titulo.gif"))
         #panel = Label(root, image = foto)
         #panel.pack(side = "bottom", fill = "both", expand = "yes")
 
         #photo = tk.PhotoImage(file="titulo.gif")
         #w = tk.Label(window, image=photo)
-       	#w.pack()
+        #w.pack()
 
         titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 28))
         titulo.pack(side = "top",fill="both", expand="yes")
@@ -245,17 +245,25 @@ class Tabuleiro:
 
         for n in range(1,11):
             for m in range(13,23):
-                botao=tk.Button(self.window)
-                cmd2=lambda n=n, m=m: self.button_callback(n,m)
-                botao.configure(width=6, height=3, command=cmd2)
-                botao.config(bg='red')
-                botao.grid(row=n, column=m)
+                self.botao=tk.Button(self.window)
+                cmd2=lambda n=n, m=m: self.botao_callback(n,m)
+                self.botao.configure(width=6, height=3, command=cmd2)
+            
+                self.botao.grid(row=n, column=m)
     
+
+    def botao_callback(self, row, column):
+        msg=(str(row) + " , " + str(column))
+        self.inicio.con.send(msg.encode('utf-8'))
+        self.botao.grid(row=row, column=column)
+        self.botao.config(bg='red')
+
 
     def button_callback(self, row, column):
         msg=(str(row) + " , " + str(column))
         self.inicio.con.send(msg.encode('utf-8'))
-
+        self.button.grid(row=row, column=column)
+        self.button.config(bg='red')
 
     #def pressiona_button(self):
      #   self.button.configure(bg="red")    
