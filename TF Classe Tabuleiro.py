@@ -70,10 +70,7 @@ class Pagina_Inicial:
 
 
     def callback2(self):
-        self.aguardando=tk.Label(self.window, text="Erro na Conexão", font=("Helvetica", 26))
-        self.aguardando.pack(side = "top", fill = "both", expand = "yes")   
-        self.check.pack_forget()
-        self.check2.pack_forget()
+        
         host= '0.0.0.0' #Servidor interno
         porta= 5000 #Porta de comunicação
         tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Define metodo como TCP (SOCK_STREAM)
@@ -248,7 +245,6 @@ class Tabuleiro:
                 self.botao=tk.Button(self.window)
                 cmd2=lambda n=n, m=m: self.botao_callback(n,m)
                 self.botao.configure(width=6, height=3, command=cmd2)
-            
                 self.botao.grid(row=n, column=m)
     
 
@@ -260,15 +256,16 @@ class Tabuleiro:
 
 
     def button_callback(self, row, column):
+
         msg=(str(row) + " , " + str(column))
         self.inicio.con.send(msg.encode('utf-8'))
         self.button.grid(row=row, column=column)
         self.button.config(bg='red')
-
+ 
     #def pressiona_button(self):
      #   self.button.configure(bg="red")    
       #  return self.cmd1
-   
+   #cmd2=lambda n=n, m=m: self.botao_callback(n,m)
 
     #def pressiona_botao(self):
      #   self.button.configure(bg="red")    
@@ -280,5 +277,3 @@ PaginaInicial=Pagina_Inicial()
 PaginaInicial.window.mainloop()
 #Tabuleiro=Tabuleiro()
 #Tabuleiro.window.mainloop()
-
-
