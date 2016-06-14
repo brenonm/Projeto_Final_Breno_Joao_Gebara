@@ -11,6 +11,7 @@ Created on Wed Apr 27 17:09:54 2016
 import tkinter as tk
 import socket
 from tkinter import ttk
+import tkinter.messagebox
 
 class Pagina_Inicial:
 
@@ -93,6 +94,7 @@ class Tabuleiro:
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
        # self.window.wm_iconbitmap('24635-200.ico')
+        tkinter.messagebox.showinfo("Clique nos quadrados para posicionar os barcos")      
         self.inicio=pginicial
 
     
