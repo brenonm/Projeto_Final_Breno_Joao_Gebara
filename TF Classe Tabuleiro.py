@@ -98,6 +98,16 @@ class Tabuleiro:
         self.inicio=pginicial
 
     
+        barcos_postos_servidor={}
+
+        barcos_postos_cliente={}
+
+        barcos_acertados_servidor={}
+
+        barcos_acertados_cliente={}
+
+
+        
 
         A=tk.Label(self.window, text="A")
         A.grid(row=0, column=1)
@@ -263,7 +273,24 @@ class Tabuleiro:
         self.inicio.con.send(msg.encode('utf-8'))
         self.button.grid(row=row, column=column)
         self.button.config(bg='red')
+        self.barcos_postos_servidor["row"] = column
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     #def pressiona_button(self):
      #   self.button.configure(bg="red")    
       #  return self.cmd1
