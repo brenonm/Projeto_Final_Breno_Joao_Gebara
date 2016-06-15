@@ -89,7 +89,7 @@ class Tabuleiro:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
-        tkinter.messagebox.showinfo("Clique nos quadrados para posicionar os barcos")      
+        tkinter.messagebox.showinfo(,"Jogador", "Clique nos quadrados para posicionar os barcos")      
         self.inicio=pginicial
 
     
@@ -240,7 +240,8 @@ class Tabuleiro:
              
                 self.button=tk.Button(self.window)
                 cmd1 = lambda i=i, j=j: self.button_callback(i,j)
-                self.button.configure(command=cmd1,width=6, height=3)
+                #cmd1 = self.button_callback(i,j)
+                self.button.configure(command=cmd1,width=6, height=3, bg=blue)
 
                 self.button.grid(row=i, column=j)
 
@@ -251,14 +252,15 @@ class Tabuleiro:
             for m in range(13,23):
                 self.botao=tk.Button(self.window)
                 cmd2=lambda n=n, m=m: self.botao_callback(n,m)
-                self.botao.configure(width=6, height=3, command=cmd2)
+                #cmd2=self.botao_callback(n,m)
+                self.botao.configure(width=6, height=3, command=cmd2, bg=blue)
                 self.botao.grid(row=n, column=m)
     
 
     def botao_callback(self, row, column):
         msg=(str(row) + " , " + str(column))
         self.inicio.con.send(msg.encode('utf-8'))
-        self.botao.grid(row=row, column=column)
+        #self.botao.grid(row=row, column=column)
         self.botao.config(bg='red')
 
 
@@ -266,7 +268,8 @@ class Tabuleiro:
 
         msg=(str(row) + " , " + str(column))
         self.inicio.con.send(msg.encode('utf-8'))
-        self.button.grid(row=row, column=column)
+        
+        #self.button.grid(row=row, column=column)
         self.button.config(bg='red')
         self.barcos_postos_servidor["row"] = column
  
