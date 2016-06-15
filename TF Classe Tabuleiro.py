@@ -21,7 +21,7 @@ class Pagina_Inicial:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.geometry("400x400")
-       # self.window.wm_iconbitmap("icone.ico")
+        self.window.wm_iconbitmap("icone.ico")
      
 
 
@@ -29,9 +29,9 @@ class Pagina_Inicial:
         #panel = Label(root, image = foto)
         #panel.pack(side = "bottom", fill = "both", expand = "yes")
 
-        #photo = tk.PhotoImage(file="titulo.gif")
-        #w = tk.Label(window, image=photo)
-        #w.pack()
+        photo = tk.PhotoImage(file="titulo.gif")
+        w = tk.Label(window, image=photo)
+        w.pack()
 
         titulo=tk.Label(self.window, text="B4T4LH4 N4V4L", font=("Helvetica", 28))
         titulo.pack(side = "top",fill="both", expand="yes")
@@ -93,7 +93,7 @@ class Tabuleiro:
         self.window=tk.Tk()
         self.window.title("Batalha Naval")
         self.window.configure(width=800, height=800)
-       # self.window.wm_iconbitmap('24635-200.ico')
+        self.window.wm_iconbitmap('24635-200.ico')
         tkinter.messagebox.showinfo("Clique nos quadrados para posicionar os barcos")      
         self.inicio=pginicial
 
